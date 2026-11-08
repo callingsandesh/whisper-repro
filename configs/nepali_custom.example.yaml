@@ -1,0 +1,12 @@
+# Copy to configs/nepali_custom.yaml and edit. The real file is gitignored
+# because the path is specific to your machine.
+#
+# IMPORTANT: source_dir points at the MASTER copy of your recordings, which
+# should live outside this repo and be backed up (Drive, external disk).
+# `prepare` copies from here into data/raw/ — it never writes back.
+#
+# Expected layout:
+#   <source_dir>/transcripts.csv     filename,reference[,sample_id,language,speaker_id,...]
+#   <source_dir>/audio/<files>
+source_dir: ~/whisper-data/nepali-recordings
+default_language: ne

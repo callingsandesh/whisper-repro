@@ -1,0 +1,6 @@
+# Copy to configs/l2arctic.yaml. L2-ARCTIC requires a request form; unpack
+# the per-speaker archives into one directory and point source_dir at it.
+source_dir: ~/corpora/l2arctic
+# Restrict to Hindi-L1 speakers — closest available proxy for Nepali-accented
+# English, and the comparison most relevant to the constructed dataset.
+speakers: [ASI, RRBI, SVBI, TNI]

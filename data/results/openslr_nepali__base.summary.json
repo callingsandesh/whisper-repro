@@ -1,0 +1,23 @@
+{
+  "dataset": "openslr_nepali",
+  "model": "base",
+  "utterances": 199,
+  "missing_hypotheses": 1,
+  "total_audio_s": 810.2,
+  "wer_raw_pct": 129.81,
+  "wer_norm_pct": 106.74,
+  "cer_norm_pct": 174.02,
+  "substitutions": 605,
+  "deletions": 541,
+  "insertions": 90,
+  "ref_words": 1158,
+  "environment": {
+    "model": "base",
+    "device": "cuda",
+    "fp16": false,
+    "whisper_version": "20250625",
+    "torch_version": "2.13.0+cu130",
+    "gpu_name": "NVIDIA GeForce GTX 1650",
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39"
+  }
+}

@@ -1,0 +1,3 @@
+# Copy to configs/openslr_nepali.yaml. Download SLR54 from
+# https://www.openslr.org/54/ and unpack it, then point source_dir at it.
+source_dir: ~/corpora/openslr54

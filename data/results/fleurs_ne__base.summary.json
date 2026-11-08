@@ -1,0 +1,23 @@
+{
+  "dataset": "fleurs_ne",
+  "model": "base",
+  "utterances": 47,
+  "missing_hypotheses": 3,
+  "total_audio_s": 572.0,
+  "wer_raw_pct": 135.77,
+  "wer_norm_pct": 100.0,
+  "cer_norm_pct": 155.37,
+  "substitutions": 1060,
+  "deletions": 1064,
+  "insertions": 1,
+  "ref_words": 2125,
+  "environment": {
+    "model": "base",
+    "device": "cuda",
+    "fp16": false,
+    "whisper_version": "20250625",
+    "torch_version": "2.13.0+cu130",
+    "gpu_name": "NVIDIA GeForce GTX 1650",
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39"
+  }
+}

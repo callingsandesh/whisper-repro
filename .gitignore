@@ -1,0 +1,24 @@
+# Data: audio is either re-downloadable (cache) or backed up elsewhere
+# (constructed set). Neither belongs in git.
+data/raw/
+data/hyps/
+data/judge/
+data/run.log*
+data/source/
+
+# Manifests and results ARE committed — manifests for the constructed set are
+# the annotation work, and results are small and expensive to regenerate.
+!data/manifests/
+!data/results/
+
+# Machine-specific paths live in configs/*.yaml; keep the examples only.
+configs/*.yaml
+!configs/*.example.yaml
+
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/

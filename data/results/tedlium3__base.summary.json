@@ -1,0 +1,23 @@
+{
+  "dataset": "tedlium3",
+  "model": "base",
+  "utterances": 200,
+  "missing_hypotheses": 0,
+  "total_audio_s": 2954.2,
+  "wer_raw_pct": 25.91,
+  "wer_norm_pct": 5.19,
+  "cer_norm_pct": 2.7,
+  "substitutions": 184,
+  "deletions": 215,
+  "insertions": 73,
+  "ref_words": 9102,
+  "environment": {
+    "model": "base",
+    "device": "cuda",
+    "fp16": false,
+    "whisper_version": "20250625",
+    "torch_version": "2.13.0+cu130",
+    "gpu_name": "NVIDIA GeForce GTX 1650",
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39"
+  }
+}

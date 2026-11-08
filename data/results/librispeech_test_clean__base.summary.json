@@ -1,0 +1,23 @@
+{
+  "dataset": "librispeech_test_clean",
+  "model": "base",
+  "utterances": 10,
+  "missing_hypotheses": 0,
+  "total_audio_s": 91.5,
+  "wer_raw_pct": 98.8,
+  "wer_norm_pct": 1.99,
+  "cer_norm_pct": 0.62,
+  "substitutions": 4,
+  "deletions": 0,
+  "insertions": 1,
+  "ref_words": 251,
+  "environment": {
+    "model": "base",
+    "device": "cuda",
+    "fp16": false,
+    "whisper_version": "20250625",
+    "torch_version": "2.13.0+cu130",
+    "gpu_name": "NVIDIA GeForce GTX 1650",
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39"
+  }
+}
