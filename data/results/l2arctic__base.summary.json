@@ -1,0 +1,23 @@
+{
+  "dataset": "l2arctic",
+  "model": "base",
+  "utterances": 1131,
+  "missing_hypotheses": 0,
+  "total_audio_s": 3338.9,
+  "wer_raw_pct": 24.71,
+  "wer_norm_pct": 9.84,
+  "cer_norm_pct": 4.54,
+  "substitutions": 791,
+  "deletions": 95,
+  "insertions": 113,
+  "ref_words": 10148,
+  "environment": {
+    "model": "base",
+    "device": "cuda",
+    "fp16": false,
+    "whisper_version": "20250625",
+    "torch_version": "2.13.0+cu130",
+    "gpu_name": "NVIDIA GeForce GTX 1650",
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39"
+  }
+}
