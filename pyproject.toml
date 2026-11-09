@@ -15,6 +15,7 @@ dependencies = [
     "datasets>=2.14",
     "PyYAML>=6.0",
     "soxr>=0.3",
+    "boto3>=1.40",
 ]
 
 [project.optional-dependencies]
