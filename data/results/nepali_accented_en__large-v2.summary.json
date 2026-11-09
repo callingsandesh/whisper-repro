@@ -1,0 +1,23 @@
+{
+  "dataset": "nepali_accented_en",
+  "model": "large-v2",
+  "utterances": 95,
+  "missing_hypotheses": 0,
+  "total_audio_s": 1429.2,
+  "wer_raw_pct": 4.59,
+  "wer_norm_pct": 1.85,
+  "cer_norm_pct": 0.71,
+  "substitutions": 50,
+  "deletions": 3,
+  "insertions": 4,
+  "ref_words": 3079,
+  "environment": {
+    "model": "large-v2",
+    "device": "cuda",
+    "fp16": true,
+    "whisper_version": "20250625",
+    "torch_version": "2.14.1+cu130",
+    "gpu_name": "Tesla T4",
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39"
+  }
+}

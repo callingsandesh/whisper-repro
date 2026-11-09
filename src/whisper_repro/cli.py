@@ -55,8 +55,10 @@ def build_parser() -> argparse.ArgumentParser:
     ss = sub.add_parser("score", help="stage 3: WER/CER, raw and normalised")
     _add_common(ss)
 
-    sj = sub.add_parser("judge", help="stage 4: LLM-as-judge (week 9+)")
+    sj = sub.add_parser("judge", help="stage 4: LLM-as-judge")
     _add_common(sj)
+    sj.add_argument("--worst", type=int, default=None,
+                    help="judge the N highest-WER utterances instead of the first N")
 
     sr = sub.add_parser("run", help="prepare + transcribe + score in one go")
     _add_common(sr)
@@ -134,7 +136,7 @@ def main(argv: list[str] | None = None) -> int:
             _print_summary(pipeline.score(args.dataset, model=args.model, limit=args.limit))
 
         elif args.command == "judge":
-            pipeline.judge(args.dataset, model=args.model, limit=args.limit)
+            pipeline.judge(args.dataset, model=args.model, limit=args.limit, worst=args.worst)
 
         elif args.command == "run":
             pipeline.prepare(args.dataset, limit=args.limit, source_dir=args.source_dir)
