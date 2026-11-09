@@ -1,0 +1,23 @@
+{
+  "dataset": "librispeech_test_clean",
+  "model": "large-v2",
+  "utterances": 200,
+  "missing_hypotheses": 0,
+  "total_audio_s": 1563.5,
+  "wer_raw_pct": 99.65,
+  "wer_norm_pct": 2.9,
+  "cer_norm_pct": 1.33,
+  "substitutions": 69,
+  "deletions": 10,
+  "insertions": 54,
+  "ref_words": 4583,
+  "environment": {
+    "model": "large-v2",
+    "device": "cuda",
+    "fp16": true,
+    "whisper_version": "20250625",
+    "torch_version": "2.14.1+cu130",
+    "gpu_name": "Tesla T4",
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "dataset": "fleurs_ne",
+  "model": "large-v2",
+  "utterances": 200,
+  "missing_hypotheses": 0,
+  "total_audio_s": 2294.5,
+  "wer_raw_pct": 102.77,
+  "wer_norm_pct": 56.29,
+  "cer_norm_pct": 38.89,
+  "substitutions": 3054,
+  "deletions": 1273,
+  "insertions": 809,
+  "ref_words": 9124,
+  "environment": {
+    "model": "large-v2",
+    "device": "cuda",
+    "fp16": true,
+    "whisper_version": "20250625",
+    "torch_version": "2.14.1+cu130",
+    "gpu_name": "Tesla T4",
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39"
+  }
+}

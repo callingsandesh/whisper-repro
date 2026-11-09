@@ -196,6 +196,7 @@ def score(dataset: str, model: str = "base", limit: int | None = None) -> dict:
 # Stage 4 -- judge (LLM-as-judge; implemented in week 9+)
 # --------------------------------------------------------------------------
 
-def judge(dataset: str, model: str = "base", limit: int | None = None) -> int:
+def judge(dataset: str, model: str = "base", limit: int | None = None,
+          worst: int | None = None) -> int:
     from .scoring.llm_judge import run_judge
-    return run_judge(dataset, model, limit=limit)
+    return run_judge(dataset, model, limit=limit, worst=worst)
