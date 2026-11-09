@@ -34,8 +34,12 @@ Design notes:
     scales produce noise, not signal.
   * Reference comes first, hypothesis second, fixed, in every call. Position
     bias in LLM judges is well documented -- say so in the report.
-  * Judge the normalised pair, so the judge is not reacting to casing and
-    punctuation differences that WER already handles.
+  * Judge the RAW pair, not the normalised one. BasicTextNormalizer strips
+    Unicode Mn marks, which in Devanagari are the vowel signs: the normalised
+    reference is mangled text, and asking a judge whether mangled text means
+    the same as something else is incoherent. Surface-form noise is handled
+    by instructing the judge to ignore casing and punctuation, which a
+    language model does reliably and a character-level metric cannot.
   * temperature=0 so a re-run of the same pair gives the same verdict.
 """
 
@@ -52,7 +56,6 @@ from pathlib import Path
 from ..datasets import read_manifest
 from ..logging_utils import get_logger
 from ..paths import REPO_ROOT, ensure_dirs, hyp_path, judge_path, results_path
-from .normalise import get_normalizer
 from .script_id import EXPECTED, detect_script, script_mismatch
 
 log = get_logger(__name__)
@@ -69,8 +72,12 @@ Reference:
 Transcript:
 {hypothesis}
 
-Judge whether the meaning survives, not whether the characters match. The
-transcript may be in a different script or alphabet from the reference --
+Judge whether the meaning survives, not whether the characters match.
+Disregard differences of casing, punctuation and digit formatting entirely --
+references in some corpora are uppercase and unpunctuated, and those
+differences are not recognition errors.
+
+The transcript may be in a different script or alphabet from the reference --
 read it phonetically and ask whether it renders the same words. A faithful
 transliteration preserves the meaning fully; unrelated text does not,
 however fluent it reads.
@@ -332,7 +339,6 @@ def run_judge(dataset: str, model: str = "base", limit: int | None = None,
                 continue
 
             raw_hyp = hp.read_text(encoding="utf-8").strip()
-            norm = get_normalizer(s.language)
             # Scripts are read off the RAW text: the normaliser mangles
             # Devanagari, which would corrupt the very thing being measured.
             # Deliberately NOT passed to the judge -- the judge reports the
@@ -342,8 +348,8 @@ def run_judge(dataset: str, model: str = "base", limit: int | None = None,
             hyp_script = detect_script(raw_hyp)
             try:
                 verdict = _call_model(PROMPT_TEMPLATE.format(
-                    reference=norm(s.reference),
-                    hypothesis=norm(raw_hyp),
+                    reference=s.reference,
+                    hypothesis=raw_hyp,
                     language_name=_LANGUAGE_NAMES.get(s.language, s.language),
                 ))
             except RuntimeError:
