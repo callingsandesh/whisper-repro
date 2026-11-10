@@ -68,7 +68,6 @@ whisper-repro datasets
 are part of the method — one produces the transcripts, the other computes the
 error rates — so version drift would silently change every number the pipeline
 reports. Everything else is a compatible range.
-`requirements.lock.txt` records the full environment of the published runs.
 
 `requirements.txt` is a one-line pointer to `pyproject.toml`; dependencies are
 edited in one place only.
@@ -504,7 +503,6 @@ first would corrupt the very property being measured.
 whisper-repro/
 ├── pyproject.toml          dependencies and the console-script entry point
 ├── requirements.txt        a pointer to pyproject.toml
-├── requirements.lock.txt   exact environment of the published runs
 ├── configs/
 │   ├── *.example.yaml      tracked templates
 │   └── *.yaml              your machine's paths — gitignored
