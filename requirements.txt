@@ -4,11 +4,11 @@
 # torch is NOT pinned here on purpose. Install the build that matches your
 # CUDA version first (see https://pytorch.org/get-started/locally/), then
 # install this project — otherwise pip may pull a CPU-only wheel.
-openai-whisper>=20250625
-jiwer>=3.0
-soundfile>=0.12
-numpy>=1.24
-datasets>=2.14
-PyYAML>=6.0
-soxr>=0.3
-boto3=1.43.120
+openai-whisper==20250625
+jiwer==3.0
+soundfile==0.12
+numpy==1.24
+datasets==2.14
+PyYAML==6.0
+soxr==0.3
+boto3==1.43.120
